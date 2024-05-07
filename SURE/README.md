@@ -1,15 +1,15 @@
-#instalacion de template ma crwacion de proyecto
+# instalacion de template ma crwacion de proyecto
 
     comandos create-project laravel/laravel SURE
 
-#config .env
+# config .env
 
     php artisan key:generate
 
     php artisan migrate
 
 
-#install template and config
+# install template and config
 
     composer require jeroennoten/laravel-adminlte
 
@@ -42,3 +42,7 @@
         <script> console.log("Hi, I'm using the Laravel-AdminLTE package!"); </script>
     @stop
 
+# Install jeatStream
+
+    composer require laravel/jetstream
+    php artisan jetstream:install livewire
