@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\UsuarioController;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -16,6 +18,12 @@ Route::middleware([
     'verified',
 ])->group(function () {
     Route::get('/dashboard', function () {
-        return view('dashboard');
-    })->name('dashboard');
+        return view('home');
+    })->name('home');
+
+    Route::get('/profile', [UsuarioController::class, 'profile'])->name('dashboard.profile');
 });
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
